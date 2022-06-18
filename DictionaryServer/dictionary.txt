@@ -1,0 +1,21 @@
+
+
+
+
+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
+
+
+
+API key : vap4BrCrrKqMf4wcx4516dC92
+API Key Secret: heBOv7H6xBKOvyFMFDcrVlEODvAGgEBCrHJkbIGPmn3VjYjaar
+Bearer Token: AAAAAAAAAAAAAAAAAAAAAO8acAEAAAAARzRoj3ZtTnHosp1JenUFU0B8pAs%3D36yqCu1aY3EcevLqdG0s80e9VDf3FyHYBShZgV92bVRT03hOx4
+
+Access Token: 1516392678681989136-T7PJaea2Utn42eVXX3wAWcaMlZWRRM
+Access Token Secret: gxDG2NbkydblTZeaBwk9hmlwP8PiUciK16jYkCX3X9YdQ
+
+
+MRC password: ODA1OTEzODZhZDEwNjk2
+
+YWQ2MWVkZDllMmQ5Mjdh
+
+kubectl set env daemonset/calico-node -n kube-system IP_AUTODETECTION_METHOD=interface=nm-bond
