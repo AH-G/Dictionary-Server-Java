@@ -1,4 +1,4 @@
-# Multithreaded Dictionary Server Implemented through Java
+# Multithreaded Dictionary Server Implemented through Socket Programming in Java
 This repository contains the code of the Java based Multithreaded Dictionary Server-Client Application. This is implemented through Socket Programming. Swing is used to implement the GUI for the server, client and the dictionary.
 
 # Context
