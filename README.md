@@ -67,10 +67,12 @@ As shown in the pic, the Server GUI contains a textField to get the port number.
 
 ![image](https://user-images.githubusercontent.com/12232515/174496458-12df59e9-3ce1-4296-b2bf-17d506bb98cb.png)
 
+## Dictionary
 ![image](https://user-images.githubusercontent.com/12232515/174496462-12bf3310-325c-4691-bb69-da25b79a9562.png)
 
 The server also has a GUI of the Dictionary. All the words and their meanings are displayed over here. This GUI is updated on a real time basis. 
 
+## Client
 ![image](https://user-images.githubusercontent.com/12232515/174496469-28063f4c-84c8-4ed4-94b4-45da90bf49da.png)
 
 Above is the pic of client GUI. It indicates when the client is not connected with the server. 
@@ -82,5 +84,9 @@ Above is the pic of client GUI. It indicates when the client is not connected wi
 ![image](https://user-images.githubusercontent.com/12232515/174496490-40f19ef7-0927-49fa-b54f-6f5e9ab8b08a.png)
 
 Above are the results of the search and write operations done through client application. The above diagrams are for reference. They don’t show all operations and errors handled by the Server and Client applications.
+
+# Critical Analysis
+
+My Server Application use threads per connections model for multithreading which I think is a superior method to implementing multithreading compared to Threads per Requests. The latter would create a lot of threads if there are a lot of clients connected and destroy them immediately once the server finishes the operations. This makes the thread per request model highly inefficient as there is always an overhead of creating a new thread every time a request comes in. Threads per connections create threads per client connection, which means that there is still concurrency present. Each thread will be dedicated to each client and will be destroyed once the client closes the connection. Server uses HashMap data structure to store the dictionary in memory. It reads the dictionary from the file each time any operation is called, performs the operations and if needed, write the changes in the dictionary files. In order to make sure that only one thread is doing the read and write operations to the dictionary file at a given time, I have created separated readfromdictfile and writetodictfile functions which are synchronized. Writetodictfile function also uses readtodictfile function to ensure that file write and read operations don’t happen at the same time. Even though my implementation of writing to dictionary file and reading from dictionary file at every operation is not time efficient (especially when considering 1000s of clients connected with the server) however it ensures that every client will always get the most up-to-date information. I personally, we can neglect this cost considering the benefits that we will have. In my implementation, I am also creating a separate thread for every Server from the same server application. My current GUI does not cater for multiple dictionary servers at the same time however my backend application will work if I ever want to extend my Server GUI to implement multiple server on different ports and addresses.  
 
 
