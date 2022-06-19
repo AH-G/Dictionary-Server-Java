@@ -35,6 +35,9 @@ Above UML diagram shows the class structure for the client. ClientGUI class has 
 Following protocol has been implemented between the client and the server.
 * For Add operation
   - Client - > Server: “write@Word@Meaning” 
+  - Server - > Client:
+    - In case of success: status(success)@Meaning1@Meaning2@...MeaningN
+    - In case of failure: status(failure)@StatusMessage
 
 
 
