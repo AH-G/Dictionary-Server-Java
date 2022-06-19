@@ -38,7 +38,23 @@ Following protocol has been implemented between the client and the server.
   - Server - > Client:
     - In case of success: status(success)@Meaning1@Meaning2@...MeaningN
     - In case of failure: status(failure)@StatusMessage
-
+*	For Delete operation
+  -	Client-> Server: “delete@Word”
+  -	Server - > Client:
+    *	In case of success: status(success)@StatusMessage
+    *	In case of failure: status(failure)@StatusMessage
+*	For update operation:
+  -	Client - > Server: “update@Word@Meaning”
+  -	Server - > Client:
+    *	In case of success: status(success)@Meaning1@Meaning2@...MeaningN
+    *	In case of failure: status(failure)@StatusMessage
+*	For Search operation:
+  - Client -> Server: “read@Word”
+  - Server - > Client:
+    *	In case of success: status(success)@Meaning1@Meaning2@...MeaningN
+    *	In case of failure: status(failure)@StatusMessage
+*	For Disconnect operation:
+  -	Client -> Server: “Disconnect”
 
 
 
