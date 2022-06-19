@@ -30,4 +30,32 @@ The ServerGUI is started up first. It has the main function and all the ServerGU
 
 Above UML diagram shows the class structure for the client. ClientGUI class has the main function. This class calls the functions from the DictionaryClient, which has all the operation functions along with the sending and receiving data function, when the operator buttons are clicked on the client GUI application
 
+# Protocol
+
+Protocol:
+Following protocol has been implemented between the client and the server.
+•	For Add operation:
+o	Client - > Server: “write@Word@Meaning”
+o	Server - > Client:
+	In case of success: status(success)@Meaning1@Meaning2@...MeaningN
+	In case of failure: status(failure)@StatusMessage
+•	For Delete operation
+o	Client-> Server: “delete@Word”
+o	Server - > Client:
+	In case of success: status(success)@StatusMessage
+	In case of failure: status(failure)@StatusMessage
+•	For update operation:
+o	Client - > Server: “update@Word@Meaning”
+o	Server - > Client:
+	In case of success: status(success)@Meaning1@Meaning2@...MeaningN
+	In case of failure: status(failure)@StatusMessage
+•	For Search operation:
+o	Client -> Server: “read@Word”
+o	Server - > Client:
+	In case of success: status(success)@Meaning1@Meaning2@...MeaningN
+	In case of failure: status(failure)@StatusMessage
+•	For Disconnect operation:
+o	Client -> Server: “Disconnect”
+
+
 
