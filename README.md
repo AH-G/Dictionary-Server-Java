@@ -56,5 +56,31 @@ Following protocol has been implemented between the client and the server.
 * For Disconnect operation:
   - Client -> Server: “Disconnect”
 
+# GUI
+The GUI is implemented in the following way
+## Server
+![image](https://user-images.githubusercontent.com/12232515/174496443-2e4141d2-2e99-4bb5-b04e-b91f4b1843e6.png)
+
+As shown in the pic, the Server GUI contains a textField to get the port number. There is a connect button to connect to the server running at localhost. There is a logs portion which shows the logs of every user along with the status messages from the server. Important exceptions are shown through the Message box while and shown in the logs as well. The GUI also show the number of words in the dictionary and the number of clients connected. These numbers are updated on a real time basis. 
+
+![image](https://user-images.githubusercontent.com/12232515/174496453-94b1fc2c-da46-44a4-86ea-38c67f935045.png)
+
+![image](https://user-images.githubusercontent.com/12232515/174496458-12df59e9-3ce1-4296-b2bf-17d506bb98cb.png)
+
+![image](https://user-images.githubusercontent.com/12232515/174496462-12bf3310-325c-4691-bb69-da25b79a9562.png)
+
+The server also has a GUI of the Dictionary. All the words and their meanings are displayed over here. This GUI is updated on a real time basis. 
+
+![image](https://user-images.githubusercontent.com/12232515/174496469-28063f4c-84c8-4ed4-94b4-45da90bf49da.png)
+
+Above is the pic of client GUI. It indicates when the client is not connected with the server. 
+
+![image](https://user-images.githubusercontent.com/12232515/174496483-b1e9aff0-3cb6-43c4-8fb7-f1d5105924d7.png)
+
+![image](https://user-images.githubusercontent.com/12232515/174496488-d0feb187-7d27-4439-b6d6-828c8a9cd925.png)
+
+![image](https://user-images.githubusercontent.com/12232515/174496490-40f19ef7-0927-49fa-b54f-6f5e9ab8b08a.png)
+
+Above are the results of the search and write operations done through client application. The above diagrams are for reference. They don’t show all operations and errors handled by the Server and Client applications.
 
 
