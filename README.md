@@ -20,5 +20,14 @@ GUI based Server Application first launches the Server’s GUI window. That wind
 5.	Delete the word.
 Each operation is followed by saving the changes to the file. This is done so that every client always has the most up-to-date information even when that information that is just recently added or updated. The protocol of communication is implemented using Strings. All the operations and the data are passed through strings to the server and the server sends the status of the operation and the result through the strings as well. The operation and the data are sent as a single string to eliminate the mismatch of operations and data. Both, server and client, are programmed to segregate the control part and data part from the strings. Finally, when the clients want to disconnect, it can just close its application which lets the server know that client has closed the connection, so server also closes the connections from its side and deletes the thread that it had associated with the client. 
 
+# Class Design
+
+![image](https://user-images.githubusercontent.com/12232515/174495086-6e756b51-5732-47f7-88d2-8abc16ce4d80.png)
+
+The ServerGUI is started up first. It has the main function and all the ServerGUI related code. Upon pressing the Connect button, an object of DictionaryServer class is created. DictionaryServer then spins up object of DictionaryDisplay class which creates the GUI for the dictionary. DictionaryServer class also creates the object of DictionaryServerMainThread. DictionaryServerMainThread creates the serversocket and listens for connection requests. Once client tries to connect with the Server it then creates the object of dictthreads class and create a seprate thread for that client. Dicthreads class then parse the requests according to the protocol mentioned below and performs each operations through the object of dictionary class. Dictionary class has all the methods for the allowed operations as well as the methods to read and write from the dictionary file. DictionaryServer class also use dictionary class to initialize the dictionary. 
+
+![image](https://user-images.githubusercontent.com/12232515/174495108-d84251e4-dce4-48e1-9cba-6dbfb465829a.png)
+
+Above UML diagram shows the class structure for the client. ClientGUI class has the main function. This class calls the functions from the DictionaryClient, which has all the operation functions along with the sending and receiving data function, when the operator buttons are clicked on the client GUI application
 
 
